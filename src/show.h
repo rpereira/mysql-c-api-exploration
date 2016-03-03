@@ -3,8 +3,6 @@
 
 #include <mysql/mysql.h>
 
-void list_table_status(MYSQL_RES *result);
-
 void print_res_header(MYSQL_RES *result);
 
 void print_res_top(MYSQL_RES *result);
