@@ -1,6 +1,6 @@
 #include "utils.h"
 
-#include <mysql/mysql.h>
+#include <mysql.h>
 
 void exit_with_error(MYSQL *con)
 {

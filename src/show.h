@@ -1,7 +1,7 @@
 #ifndef _LIB_SHOW_H_
 #define _LIB_SHOW_H_
 
-#include <mysql/mysql.h>
+#include <mysql.h>
 
 void print_res_header(MYSQL_RES *result);
 
