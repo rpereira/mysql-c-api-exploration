@@ -1,4 +1,6 @@
-CC = gcc
+CC     = gcc
+CFLAGS = -g -O2 -Wall -Wextra -pedantic -std=c99
+
 SOURCES = $(wildcard src/*.c)
 
 # Options needed for compiling or linking
@@ -7,4 +9,4 @@ MYSQL_L = `mysql_config --libs`
 
 client: $(SOURCES)
 	@mkdir -p bin
-	$(CC) -o bin/client $(SOURCES) -O2 -Wall -Wextra -std=c99 $(MYSQL_I) $(MYSQL_L)
+	$(CC) $(CFLAGS) -o bin/client $(SOURCES) $(MYSQL_I) $(MYSQL_L)
