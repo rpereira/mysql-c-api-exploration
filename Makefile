@@ -1,5 +1,10 @@
-CC=gcc
-CFLAGS=-Wall -std=c99 `mysql_config --cflags --libs`
+CC = gcc
+SOURCES = $(wildcard src/*.c)
 
-exe1: exe1.c utils.c
-	$(CC) -o exe1 exe1.o utils.o
+# Options needed for compiling or linking
+MYSQL_I = `mysql_config --cflags`
+MYSQL_L = `mysql_config --libs`
+
+client: $(SOURCES)
+	@mkdir -p bin
+	$(CC) -o bin/client $(SOURCES) -O2 -Wall -Wextra -std=c99 $(MYSQL_I) $(MYSQL_L)
