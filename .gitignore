@@ -1,3 +1,6 @@
+# Dirs
+bin/
+
 # Object files
 *.o
 *.ko
