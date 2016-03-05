@@ -1,7 +1,7 @@
 #include "utils.h"
 #include "show.h"
 
-#include <mysql/mysql.h>
+#include <mysql.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,8 +18,7 @@ int main(int argc, char **argv)
         exit_with_error(con);
     }
 
-    char *stmt = "SELECT * FROM ACTOR LIMIT 5";
-    if (mysql_query(con, stmt)) {
+    if (mysql_query(con, argv[1])) {
         exit_with_error(con);
     }
 
@@ -28,7 +27,7 @@ int main(int argc, char **argv)
         exit_with_error(con);
     }
 
-    printf("mysql> %s;\n", stmt);
+    printf("mysql> %s;\n", argv[1]);
     print_result_set(result);
 
     mysql_free_result(result);
