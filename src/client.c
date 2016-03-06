@@ -13,6 +13,10 @@ int main(int argc, char **argv)
         printf("Usage: %s \"<mysql-statement>\"\n", argv[0]);
         exit(EXIT_FAILURE);
     }
+    else if (argc > 1) {
+        fprintf(stderr, "%s: Too many arguments\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
 
     MYSQL mysql;
     mysql_init(&mysql);
