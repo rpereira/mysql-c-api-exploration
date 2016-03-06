@@ -7,6 +7,13 @@
 
 int main(int argc, char **argv)
 {
+    // Skip the program name
+    (argc)--;
+    if (argc == 0) {
+        printf("Usage: %s \"<mysql-statement>\"\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
     MYSQL *con = mysql_init(NULL);
     if (con == NULL) {
         fprintf(stderr, "%s\n", mysql_error(con));
