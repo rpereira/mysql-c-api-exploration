@@ -1,5 +1,7 @@
 # Dirs
 bin/
+build/
+lib/
 
 # Object files
 *.o
