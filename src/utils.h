@@ -4,6 +4,6 @@
 #include <mysql.h>
 #include <stdio.h>
 
-void exit_with_error(MYSQL *con);
+void exit_with_error(MYSQL *mysql);
 
 #endif /* _LIB_UTILS_H_ */

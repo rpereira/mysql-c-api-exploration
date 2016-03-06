@@ -63,7 +63,7 @@ void print_res_row(MYSQL_RES *result, MYSQL_ROW current)
     putchar('\n');
 }
 
-void print_result_set(MYSQL_RES *result)
+void print_result_set(MYSQL *mysql, MYSQL_RES *result)
 {
     MYSQL_ROW row;
 
@@ -72,4 +72,5 @@ void print_result_set(MYSQL_RES *result)
         print_res_row(result, row);
     }
     print_res_top(result);
+    printf("%ld rows in set\n", (long) mysql_affected_rows(mysql));
 }
